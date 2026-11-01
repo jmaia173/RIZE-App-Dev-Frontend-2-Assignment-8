@@ -1,62 +1,128 @@
+/* ===== Mobile-first base (375px+) ===== */
 .events-page {
-  padding: 40px;
-  max-width: 1400px;
+  padding: 1rem;
+  max-width: 87.5rem;
   margin: 0 auto;
 }
 
 .loading {
   text-align: center;
-  padding: 100px 0;
-  font-size: 24px;
+  padding: 4rem 0;
+  font-size: 1.25rem;
   color: #666;
 }
 
 .page-header {
-  margin-bottom: 40px;
+  margin-bottom: 1.5rem;
 }
 
 .page-header h1 {
-  font-size: 42px;
+  font-size: 1.75rem;
   color: #2c3e50;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .page-header p {
-  font-size: 18px;
+  font-size: 1rem;
   color: #666;
 }
 
 .events-container {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .sidebar {
-  width: 280px;
-  flex-shrink: 0;
+  width: 100%;
 }
 
 .filter-section {
   background-color: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .filter-section h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
   color: #2c3e50;
 }
 
 .filter-note {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #999;
 }
 
 .events-grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.events-grid > * {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+/* ===== Tablet (768px+) ===== */
+@media (min-width: 768px) {
+  .events-page {
+    padding: 1.5rem;
+  }
+
+  .page-header {
+    margin-bottom: 2rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.25rem;
+  }
+
+  .page-header p {
+    font-size: 1.125rem;
+  }
+
+  /* Sidebar stays stacked above the grid */
+  .events-grid > * {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+  }
+}
+
+/* ===== Desktop (1024px+) ===== */
+@media (min-width: 1024px) {
+  .events-page {
+    padding: 2.5rem;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.625rem;
+  }
+
+  .events-container {
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+
+  .sidebar {
+    width: 17.5rem;
+    flex-shrink: 0;
+  }
+
+  .events-grid {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    gap: 1.875rem;
+  }
+
+  .events-grid > * {
+    flex: 0 0 calc((100% - 1.875rem) / 2);
+  }
 }
